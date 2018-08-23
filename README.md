@@ -1,3 +1,4 @@
+
 # Projeto Mark 7
 ## Gerenciador de Tarefas
 
@@ -10,3 +11,7 @@
 * Finalizar tarefa
 
 ## Sprint 1 > Login
+
+# mark7
+Como usar o jenkins para testar uma webapp com Ruby e Cucumber
+
