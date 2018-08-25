@@ -2,6 +2,7 @@ pipeline{
     agent{
         docker{
             image 'ruby'
+            args '--link selenium'
         }
     }
     environment{
@@ -15,7 +16,7 @@ pipeline{
         }
         stage('Run Features'){
             steps{
-                sh "cucumber"
+                sh "cucumber -p ci"
 
             }
         }
