@@ -26,7 +26,7 @@ if @browser.eql? ('headless')
 
   caps = Selenium::WebDriver::Remote::Capabilities.chrome(
     'chromeOptions' => {'args' => args}
-    }
+
   )
 
   Capybara.register_driver :selenium do |app|
