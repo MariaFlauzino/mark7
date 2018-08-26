@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh "cucumber -p ci -t @smoke"
+                        sh "cucumber -p ci_jenkins"
                     } finally {
                         cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'log', sortingMethod: 'ALPHABETICAL'
                     }
