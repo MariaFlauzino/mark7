@@ -18,12 +18,13 @@ pipeline{
                         cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'log', sortingMethod: 'ALPHABETICAL'
                     }
                 }
-
             }
         }
         stage('Read to production?'){
-            input message: 'Testes finalizados com sucesso. Podemos ir para produção?'
-            echo "Faz de conta que vai subir para produção."
+            steps{
+                input message: 'Testes finalizados com sucesso. Podemos ir para produção?'
+                echo "Faz de conta que vai subir para produção."
+            }
         }
     }
 }
