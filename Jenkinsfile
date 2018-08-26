@@ -1,22 +1,31 @@
-node{
-    stage 'Build'
-        git 'https://github.com/MariaFlauzino/mark7.git'
-
-    stage 'Bundle' 
-        sh "gem install bundler"
-        sh "bundle install"
-                   
-    stage 'Run Features'
-        script{
-            try{
-                sh "cucumber -p ci_jenkins"
-            }
-            finally{
-                cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'log', sortingMethod: 'ALPHABETICAL'
+pipeline {
+    agent any
+ 
+    environment {
+        CI = true
+    }
+    stages {
+        stage('Bundle') {
+            steps {
+                sh "bundle install"
             }
         }
-    
-    stage'Read to production?'
-        input message: 'Testes finalizados com sucesso. Podemos ir para produção?'
-        echo "Faz de conta que vai subir para produção."
+        stage('Run Features') {
+            steps {
+                script {
+                    try {
+                        sh "bundle exec cucumber -p ci -t @smoke"
+                    } finally {
+                        cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'log', sortingMethod: 'ALPHABETICAL'
+                    }
+                }
+            }
+        }
+        stage('Read to Production?') {
+            steps {
+                input message: 'Testes finalizados com sucesso. Podemos ir para produção?'
+                echo "Faz de conta que vai subir para produção."
+            }
+        }
+    }
 }
