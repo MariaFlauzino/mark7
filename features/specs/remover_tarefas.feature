@@ -1,4 +1,5 @@
 #language: pt
+# encoding: utf-8
 
 @sprint3
 Funcionalidade: Remover uma tarefa

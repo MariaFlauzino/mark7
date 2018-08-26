@@ -1,4 +1,5 @@
 #language: pt
+# enconding: utf-8
 
 @sprint2
 Funcionalidade: Cadastrar tarefas
@@ -22,7 +23,7 @@ Funcionalidade: Cadastrar tarefas
         E devo ver somente 1 tarefa com o nome cadastrado.
     
     @autenticado @tarefa_duplicada @logout
-    Cenário: Tarefa não pode ser duplicada
+    Cenario: Tarefa não pode ser duplicada
 
         Dado que eu tenho uma tarefa com os seguintes atributos:
             |nome| Ler um livro|
@@ -39,7 +40,7 @@ Funcionalidade: Cadastrar tarefas
         E devo ver somente 1 tarefa com o nome cadastrado.
 
     @autenticado @desafio @logout
-    Cenário: Valor mínimo
+    Cenario: Valor minimo
 
         Dado que eu tenho uma tarefa com os seguintes atributos:
             |nome| Mongo|

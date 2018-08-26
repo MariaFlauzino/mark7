@@ -1,4 +1,5 @@
 # mensagem de confirmação de exclusão
+
 class Mensagem_Confirmacao < SitePrism::Section
   element :botao_sim, '.btn-danger'
   element :botao_nao, '.btn-default'

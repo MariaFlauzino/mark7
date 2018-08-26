@@ -13,7 +13,7 @@ Funcionalidade: Login
         
         Quando preencho o campo email com "maria@teste.com" e "123456"
         Então sou logado com sucesso
-        E sou redirecionado para o painel de tarefas com a mensagem "Olá, Maria"
+        E sou redirecionado para o painel de tarefas com a mensagem "Olá, maria@teste.com"
 
     Esquema do Cenário: Tentativa de Logar
     

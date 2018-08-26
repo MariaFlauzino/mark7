@@ -1,3 +1,4 @@
+
 Dado('que eu acessei o formulário de Login') do
   visit 'https://mark7.herokuapp.com/'
 end
@@ -12,6 +13,8 @@ Então('sou logado com sucesso') do
 end
 
 Então('sou redirecionado para o painel de tarefas com a mensagem {string}') do |ola|
+  puts ola
+  puts (@tarefas_page.painel).text
   expect(@tarefas_page.painel).to have_content ola
 end
 

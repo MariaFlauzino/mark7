@@ -1,3 +1,4 @@
+
 Dado('que eu tenho uma tarefa com os seguintes atributos:') do |table|
   @nova_tarefa =  table.rows_hash
   DAO.new.remover_tarefas(@nova_tarefa[:nome])

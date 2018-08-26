@@ -1,9 +1,11 @@
 ---
-default: -p html -p dot 
-ci: -p json -p dot -p headless
+default: -p html -p bdd -p chrome
+ci: -p json -p bdd -p headless
+ci_jenkins: -p json -p bdd -p ci_headless
 bdd: --format pretty
 dot: --format progress
 html: --format html --out=log/features.html
 json: --format json --out=log/features.json
+ci_headless: BROWSER=ci_headless
 headless: BROWSER=headless
 chrome: BROWSER=chrome

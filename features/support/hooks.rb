@@ -1,3 +1,4 @@
+
 Before do
   @login_page = LoginPage.new
   @tarefas_page = TarefasPage.new
