@@ -1,13 +1,15 @@
 node{
+    stage 'Build'
+        git 'https://github.com/MariaFlauzino/mark7.git'
+
     stage 'Bundle' 
         sh "gem install bundler"
         sh "bundle install"
-            
-        
+                   
     stage 'Run Features'
         script{
             try{
-                bat "cucumber -p ci_jenkins"
+                sh "cucumber -p ci_jenkins"
             }
             finally{
                 cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'log', sortingMethod: 'ALPHABETICAL'
