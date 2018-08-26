@@ -6,6 +6,7 @@ pipeline{
     stages{
         stage('Bundle'){
             steps{
+                sh "gem install bundler"
                 sh "bundle install"
             }
         }
@@ -13,7 +14,7 @@ pipeline{
             steps{
                 script{
                     try{
-                        sh "cucumber -p ci"
+                        sh "cucumber -p ci_jenkins"
                     }
                     finally{
                         cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'log', sortingMethod: 'ALPHABETICAL'
