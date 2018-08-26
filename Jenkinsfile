@@ -6,15 +6,15 @@ pipeline{
     stages{
         stage('Bundle'){
             steps{
-                sh "gem install bundler"
-                sh "bundle install"
+                bat "gem install bundler"
+                bat "bundle install"
             }
         }
         stage('Run Features'){
             steps{
                 script{
                     try{
-                        sh "cucumber -p ci_jenkins"
+                        bat "cucumber -p ci_jenkins"
                     }
                     finally{
                         cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'log', sortingMethod: 'ALPHABETICAL'
